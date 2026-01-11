@@ -1,5 +1,3 @@
-import { iterativeFibonacci, recursiveFibonacci } from "./fibonacci.js";
-
 function mergeSort(fibArray) {
     // first time check whether parameter has single value
     if (fibArray.length === 1) {
@@ -14,17 +12,16 @@ function mergeSort(fibArray) {
     const firstBackTrack = mergeSort(firstHalf);
     const secondBackTrack = mergeSort(secondHalf);
     let returningArray = [];
-    console.log(`it reached here!`);
 
     let fIndex = 0;
     let sIndex = 0;
     for (let i = 0; i < firstBackTrack.length + secondBackTrack.length; i++) {
-        if (!firstBackTrack[fIndex]) {
+        if (firstBackTrack[fIndex] === undefined) {
             returningArray = returningArray.concat(
                 secondBackTrack.slice(sIndex)
             );
             return returningArray;
-        } else if (!secondBackTrack[sIndex]) {
+        } else if (secondBackTrack[sIndex] === undefined) {
             returningArray = returningArray.concat(
                 firstBackTrack.slice(fIndex)
             );
@@ -45,4 +42,4 @@ function mergeSort(fibArray) {
     return returningArray;
 }
 
-console.log(mergeSort(iterativeFibonacci(30)));
+console.log(mergeSort([5, 3, 2, 6, 1, 8, 9, 0, 4, 7])); // Output: [0 ,1 ,2 ,3, 4, 5, 6, 7, 8, 9]

@@ -22,9 +22,9 @@ function recursiveFibonacci(num, array = [], prevNum = 0, accumulator = 1) {
     return array;
 }
 
-// console.log(iterativeFibonacci(0));
+console.log(iterativeFibonacci(0)); // Output: []
+console.log(iterativeFibonacci(1)); // Output: [0]
 
-// console.log(recursiveFibonacci(13));
-// console.log(iterativeFibonacci(13));
+console.log(iterativeFibonacci(13)); // Output: [0,  1,  1,  2,  3,  5, 8, 13, 21, 34, 55, 89, 144]
 
 export { iterativeFibonacci, recursiveFibonacci };
